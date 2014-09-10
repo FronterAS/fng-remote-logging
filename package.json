@@ -1,0 +1,31 @@
+{
+  "name": "fng-remoteLoggign",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node example/app.js",
+    "postinstall": "node_modules/.bin/gulp build",
+    "test": "node_modules/.bin/gulp test",
+    "lint": "node_modules/.bin/gulp lint",
+    "watch": "node_modules/.bin/gulp watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.6.1",
+    "gulp": "^3.8.6",
+    "gulp-bower": "0.0.6",
+    "gulp-jscs": "^1.0.0",
+    "gulp-jshint": "^1.8.0",
+    "gulp-karma": "0.0.4",
+    "gulp-livereload": "^2.1.1",
+    "gulp-load-plugins": "^0.5.3",
+    "gulp-ng-annotate": "^0.3.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.3.1",
+    "jshint-stylish": "^0.4.0",
+    "karma": "^0.12.17",
+    "karma-coverage": "^0.2.4",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4"
+  }
+}

@@ -1,0 +1,37 @@
+{
+    "curly"        : true,
+    "eqeqeq"       : true,
+    "forin"        : true,
+    "immed"        : true,
+    "latedef"      : true,
+    "newcap"       : true,
+    "noarg"        : true,
+    "undef"        : true,
+    "unused"       : true,
+    "strict"       : true,
+    "globalstrict" : true,
+    "maxdepth"     : 4,
+    "maxcomplexity": 10,
+    "latedef"      : "noFunc",
+
+    "browser": true,
+    "node": false,
+
+    "globals": {
+        "require": false,
+        "__dirname": false,
+        "expect": false,
+        "spyOn": false,
+        "setTimeout": false,
+        "console": false,
+        "module": false,
+        "angular": false,
+        "describe": false,
+        "inject": false,
+        "it": false,
+        "beforeEach": false,
+        "afterEach": false,
+        "mod": true,
+        "jasmine": false
+    }
+}

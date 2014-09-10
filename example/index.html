@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>example app</title>
+</head>
+<style>.ng-cloak { display: none !important; }</style>
+<body ng-app="myApp" ng-controller="main">
+
+<h3>Open the browser console to see the output from these actions:</h3>
+
+<button ng-click="makeException()">Make exception</button><br />
+<button ng-click="logInfo()">Log Info</button><br />
+<button ng-click="logWarn()">Log warn</button><br />
+<button ng-click="logError()">Log Error</button><br />
+<button ng-click="logDebug()">Log Debug</button><br />
+
+<p ng-if="showInfo" class="ng-cloak">
+    You need to the terminal you ran `npm start` in to see the result of the remote logging!
+</p>
+
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/js/remoteLoggingModule.js"></script>
+<script src="/js/exceptionHandlerOverride.js"></script>
+<script>
+    var mod = angular.module('myApp', ['remoteLogging']);
+
+    mod.constant('remoteLoggingUrl', '/logging'); //Local endpoint, see node log for output
+
+    mod.controller('main', function ($scope, log) {
+        $scope.showInfo = false;
+
+        $scope.logInfo = function () {
+            $scope.showInfo = true;
+            log.info('An info log');
+        };
+        $scope.logWarn = function () {
+            $scope.showInfo = true;
+            log.warn('A warn log');
+        };
+        $scope.logError = function () {
+            $scope.showInfo = true;
+            log.info('An error log');
+        };
+        $scope.logDebug = function () {
+            $scope.showInfo = true;
+            log.debug('A debug log');
+        };
+
+        $scope.makeException = function () {
+            $scope.showInfo = true;
+            throw new Error('This is a exception!\n' +
+                    'Remote logging this exception is made possible by the exceptionHandlerOverride.js file');
+        };
+    })
+</script>
+</body>
+</html>

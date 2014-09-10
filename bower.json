@@ -1,0 +1,36 @@
+{
+    "name": "fng-remoteLogging",
+    "version": "0.0.1",
+    "description": "Fronter Angular.js module to easily enable logging to a backend service form the frontend",
+    "main": "bin/remoteLoggingModule.min.js",
+
+    "moduleType": [
+        "node"
+    ],
+    "keywords": [
+        "angular.js",
+        "logging",
+        "remote",
+        "frontend"
+    ],
+    "authors": [
+        "Fronter"
+    ],
+    "license": "MIT",
+    "homepage": "http://fronter.com",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules/",
+        "bower_components/",
+        "src/tests/",
+        "example/",
+        "gulpfile.js",
+        "karma.conf.js",
+        "README.*"
+    ],
+    "dependencies": {
+        "angular": "1.2.21",
+        "angular-mocks": "1.2.21"
+    }
+}
