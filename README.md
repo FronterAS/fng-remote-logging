@@ -66,6 +66,9 @@ When releasing this module it is important to update all of the versions:
 
 ### Todo:
 
-1. Make this project browserify compatible.
+1. Make this project browserify compatible. (Karl Gustav)
+2. Create a standalone branch, with injected ajax. (Gavin)
+3. Extract the http posting out into a transport service,
+   so that people can choose to send logs over sockets for instance (Petter)
 
 \* http://en.wikipedia.org/wiki/Software_release_life_cycle#Alpha
