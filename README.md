@@ -8,10 +8,14 @@ Fronter Angular.js module to easily enable logging to a back end service from th
 
 To start using this Angular.js module you need to add this to your index.html:
 
+```html
     <script src="/bower_components/remoteLogging/bin/remoteLoggingModule.min.js"></script>
+```
 
 And to log you need to use the rlog service instead of the Angular.js $log service:
   
+
+```js
     var module = angular.module('myApp', ['remoteLogging']);
     
     module.constant('remoteLoggingUrl', '/logging'); //This is a requirement for the remoteLogging module
@@ -19,11 +23,15 @@ And to log you need to use the rlog service instead of the Angular.js $log servi
     module.controller('main', function ($scope, rlog) {
         rlog.info('logging some stuff to the console and to the backend');
     });
+```
+
     
 When you have imported the remoteLogging module as stated above you only need to add the exceptionHandlerOverride
 to your index.html to automatically start logging exceptions:
 
+```html
     <script src="/bower_components/remoteLogging/bin/exceptionHandlerOverride.min.js"></script>
+```
 
 ## Development:
 
