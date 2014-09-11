@@ -1,4 +1,4 @@
-# [ALPHA] VERSION *
+# [ALPHA] VERSION<sup>*</sup> 0.0.2
 
 # Fronter Angular.js remote logging
 
@@ -12,7 +12,7 @@ your bower.json file:
 ```json
     ...
     "dependencies": {
-        "fng-remote-logging": "https://gitlab.fronter.net/frontend-modules/fng-remote-logging.git#0.0.1"
+        "fng-remote-logging": "https://gitlab.fronter.net/frontend-modules/fng-remote-logging.git#0.0.2"
     }
     ...
 ```
