@@ -1,5 +1,5 @@
 'use strict';
-angular.module('myApp', ['remoteLogging'])
+angular.module('myApp', ['fng.remote.logging'])
     .constant('REMOTE_LOGGING_URL', '/logging') // Local endpoint, see node log for output
     .controller('main', function ($scope, rlog) {
 

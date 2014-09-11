@@ -4,7 +4,7 @@ describe('The exceptionHandlerOverride', function () {
     var exceptionHandlerOverride,
         rlogStub;
 
-    beforeEach(module('remoteLogging'));
+    beforeEach(module('fng.remote.logging'));
 
     beforeEach(function () {
         rlogStub = jasmine.createSpyObj('rlog', ['exception']);

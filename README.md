@@ -13,20 +13,18 @@ To start using this Angular.js module you need to add this to your index.html:
 ```
 
 And to log you need to use the rlog service instead of the Angular.js $log service:
-  
 
 ```js
-    var module = angular.module('myApp', ['remoteLogging']);
-    
-    module.constant('REMOTE_LOGGING_URL', '/logging'); //This is a requirement for the remoteLogging module
-    
+    var module = angular.module('myApp', ['fng.remote.logging']);
+
+    module.constant('REMOTE_LOGGING_URL', '/logging'); //This is a requirement for the remote logging module
+
     module.controller('main', function ($scope, rlog) {
         rlog.info('logging some stuff to the console and to the backend');
     });
 ```
 
-    
-When you have imported the remoteLogging module as stated above you only need to add the exceptionHandlerOverride
+When you have imported the remote logging module as stated above you only need to add the exceptionHandlerOverride
 to your index.html to automatically start logging exceptions:
 
 ```html

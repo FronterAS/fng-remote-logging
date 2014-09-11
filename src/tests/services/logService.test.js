@@ -6,7 +6,7 @@ describe('The log service', function () {
         $httpBackend,
         REMOTE_LOGGING_URL;
 
-    beforeEach(module('remoteLogging'));
+    beforeEach(module('fng.remote.logging'));
 
     beforeEach(function () {
         module(function ($provide) {

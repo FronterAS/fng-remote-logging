@@ -1,6 +1,6 @@
 'use strict';
 (function (angular) {
-    angular.module('remoteLogging', [])
+    angular.module('fng.remote.logging', [])
         .service('rlog', function ($log, $http, REMOTE_LOGGING_URL) {
             this.log = function () {
                 var message = spaceJoin(arguments);
