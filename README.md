@@ -1,9 +1,8 @@
 # [ALPHA] VERSION *
 
-# Fronter Angular.js remote logging 
+# Fronter Angular.js remote logging
 
-Fronter Angular.js module to easily enable logging to a backend service form the frontend
-
+Fronter Angular.js module to easily enable logging to a back end service from the front end.
 
 ## Usage:
 
@@ -18,7 +17,7 @@ And to log you need to use the log service instead of the Angular.js $log servic
     module.constant('remoteLoggingUrl', '/logging'); //This is a requirement for the remoteLogging module
     
     module.controller('main', function ($scope, log) {
-        log.info('logging some stuff to the console and to the backend');        
+        log.info('logging some stuff to the console and to the backend');
     });
     
 When you have imported the remoteLogging module as stated above you only need to add the exceptionHandlerOverride
@@ -32,7 +31,7 @@ Before anything you need to run `npm install` as with any node.js application!
 
 * To run tests: `npm test`
     * location of coverage report when/after running tests: `./coverage/PhantomJS 1.9.7 (Mac OS X)/index.html`
-* To start example app: `npm start`
+* To start the server for the example: `npm start`
 * To lint the code: `npm run lint`
 * To get constant feedback when developing: `npm run watch`
 
@@ -41,10 +40,10 @@ Before anything you need to run `npm install` as with any node.js application!
 The versioning works like this:
 
     <major>.<minor>.<patch>
-    
+
 Meaning:
 
-* major: You brake the api
+* major: You break the api
 * minor: You add to the api
 * patch: Everything else
 
@@ -59,6 +58,6 @@ When releasing this module it is important to update all of the versions:
 
 ### Todo:
 
-1. make this project browserify compatible
+1. Make this project browserify compatible.
 
-\* http://en.wikipedia.org/wiki/Software_release_life_cycle#Alpha 
+\* http://en.wikipedia.org/wiki/Software_release_life_cycle#Alpha
