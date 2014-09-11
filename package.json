@@ -1,6 +1,6 @@
 {
-  "name": "fng-remoteLoggign",
   "version": "0.0.1",
+  "name": "fng-remote-logging",
   "private": true,
   "scripts": {
     "start": "node example/server.js",

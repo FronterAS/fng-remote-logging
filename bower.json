@@ -1,5 +1,5 @@
 {
-    "name": "fng-remoteLogging",
+    "name": "fng-remote-logging",
     "version": "0.0.1",
     "main": "bin/remoteLoggingModule.min.js",
 
