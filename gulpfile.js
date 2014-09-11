@@ -24,7 +24,7 @@ gulp.task('build', function () {
         .pipe(plugins.ngAnnotate())
         .pipe(plugins.uglify())
         .pipe(plugins.rename({suffix: '.min'}))
-        .pipe(gulp.dest('bin/'));
+        .pipe(gulp.dest('build/'));
 });
 
 gulp.task('watch', ['karma-for-watch', 'lint'], function () {
