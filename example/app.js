@@ -7,16 +7,16 @@ var express = require('express'),
 
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname)); //Monumentally stupid to do in a production app!!!
+app.use(express.static(__dirname)); // Monumentally stupid to do this in a production app!!!
 app.use('/js', express.static(__dirname + '/../src/'));
 app.use('/bower_components', express.static(__dirname + '/../bower_components'));
 
 app.post('/logging', function (req) {
     var prettyPrintJson = JSON.stringify(req.body, undefined, 2);
 
-    console.log('\n############## Reseived this on the "/logging" endpoint: ##############\n');
+    console.log('\n############## Received this on the "/logging" endpoint: ##############\n');
     console.log(prettyPrintJson + '\n');
 });
 
 app.listen(PORT);
-console.log('Open your browser to http://localhost:' + PORT + '/ to see the example');
+console.log('Point your browser at http://localhost:' + PORT + '/ to see the example');
