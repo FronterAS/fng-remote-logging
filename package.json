@@ -9,9 +9,10 @@
     "lint": "node_modules/.bin/gulp lint",
     "watch": "node_modules/.bin/gulp watch"
   },
-  "dependencies": {},
+
   "devDependencies": {
     "express": "^4.6.1",
+    "body-parser": "^1.8.1",
     "gulp": "^3.8.6",
     "gulp-bower": "0.0.6",
     "gulp-jscs": "^1.0.0",
