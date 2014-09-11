@@ -1,7 +1,6 @@
 {
     "name": "fng-remoteLogging",
     "version": "0.0.1",
-    "description": "Fronter Angular.js module to easily enable logging to a backend service form the frontend",
     "main": "bin/remoteLoggingModule.min.js",
 
     "moduleType": [
