@@ -1,28 +1,28 @@
 'use strict';
 angular.module('myApp', ['remoteLogging'])
     .constant('remoteLoggingUrl', '/logging') // Local endpoint, see node log for output
-    .controller('main', function ($scope, log) {
+    .controller('main', function ($scope, rlog) {
 
         $scope.showInfo = false;
 
         $scope.logInfo = function () {
             $scope.showInfo = true;
-            log.info('An info log');
+            rlog.info('An info log');
         };
 
         $scope.logWarn = function () {
             $scope.showInfo = true;
-            log.warn('A warn log');
+            rlog.warn('A warn log');
         };
 
         $scope.logError = function () {
             $scope.showInfo = true;
-            log.info('An error log');
+            rlog.info('An error log');
         };
 
         $scope.logDebug = function () {
             $scope.showInfo = true;
-            log.debug('A debug log');
+            rlog.debug('A debug log');
         };
 
         $scope.makeException = function () {

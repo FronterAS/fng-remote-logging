@@ -1,7 +1,7 @@
 'use strict';
 
 describe('The log service', function () {
-    var log,
+    var rlog,
         $logMock,
         $httpBackend,
         remoteLoggingUrl;
@@ -16,38 +16,38 @@ describe('The log service', function () {
         });
     });
 
-    beforeEach(inject(function (_log_, _$httpBackend_, _remoteLoggingUrl_) {
-        log = _log_;
+    beforeEach(inject(function (_rlog_, _$httpBackend_, _remoteLoggingUrl_) {
+        rlog = _rlog_;
         $httpBackend = _$httpBackend_;
         remoteLoggingUrl = _remoteLoggingUrl_;
     }));
 
     describe('should have a log() method and that', function () {
         it('should exist', function () {
-            expect(typeof log.log).toBe('function');
+            expect(typeof rlog.log).toBe('function');
         });
 
         it('should call $log.log()', function () {
-            log.log();
+            rlog.log();
             expect($logMock.log).toHaveBeenCalled();
         });
 
         it('should call $log.log() with the message that is given as a argument', function () {
             var message = 'some message';
-            log.log(message);
+            rlog.log(message);
             expect($logMock.log).toHaveBeenCalledWith(message);
         });
 
         it('should join multiple arguments to one string', function () {
             var message1 = 'some message',
                 message2 = 'some message 2';
-            log.log(message1, message2);
+            rlog.log(message1, message2);
             expect($logMock.log).toHaveBeenCalledWith(message1 + ' ' + message2);
         });
 
         it('should make a post call to the remoteLoggingUrl endpoint', function () {
             $httpBackend.expectPOST(remoteLoggingUrl).respond(200);
-            log.log();
+            rlog.log();
             $httpBackend.flush();
         });
 
@@ -58,7 +58,7 @@ describe('The log service', function () {
                     message: message
                 };
             $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
-            log.log(message);
+            rlog.log(message);
             $httpBackend.flush();
         });
 
@@ -70,37 +70,37 @@ describe('The log service', function () {
                     message: message1 + ' ' + message2
                 };
             $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
-            log.log(message1, message2);
+            rlog.log(message1, message2);
             $httpBackend.flush();
         });
     });
 
     describe('should have a info() method and that', function () {
         it('should exist', function () {
-            expect(typeof log.info).toBe('function');
+            expect(typeof rlog.info).toBe('function');
         });
 
         it('should call $log.info()', function () {
-            log.info();
+            rlog.info();
             expect($logMock.info).toHaveBeenCalled();
         });
 
         it('should call $log.info() with the message that is given as a argument', function () {
             var message = 'some message';
-            log.info(message);
+            rlog.info(message);
             expect($logMock.info).toHaveBeenCalledWith(message);
         });
 
         it('should join multiple arguments to one string', function () {
             var message1 = 'some message',
                 message2 = 'some message 2';
-            log.info(message1, message2);
+            rlog.info(message1, message2);
             expect($logMock.info).toHaveBeenCalledWith(message1 + ' ' + message2);
         });
 
         it('should make a post call to the remoteLoggingUrl endpoint', function () {
             $httpBackend.expectPOST(remoteLoggingUrl).respond(200);
-            log.info();
+            rlog.info();
             $httpBackend.flush();
         });
 
@@ -111,7 +111,7 @@ describe('The log service', function () {
                     message: message
                 };
             $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
-            log.info(message);
+            rlog.info(message);
             $httpBackend.flush();
         });
 
@@ -123,37 +123,37 @@ describe('The log service', function () {
                     message: message1 + ' ' + message2
                 };
             $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
-            log.info(message1, message2);
+            rlog.info(message1, message2);
             $httpBackend.flush();
         });
     });
 
     describe('should have a warn() method and that', function () {
         it('should exist', function () {
-            expect(typeof log.warn).toBe('function');
+            expect(typeof rlog.warn).toBe('function');
         });
 
         it('should call $log.warn()', function () {
-            log.warn();
+            rlog.warn();
             expect($logMock.warn).toHaveBeenCalled();
         });
 
         it('should call $log.warn() with the message that is given as a argument', function () {
             var message = 'some message';
-            log.warn(message);
+            rlog.warn(message);
             expect($logMock.warn).toHaveBeenCalledWith(message);
         });
 
         it('should join multiple arguments to one string', function () {
             var message1 = 'some message',
                 message2 = 'some message 2';
-            log.warn(message1, message2);
+            rlog.warn(message1, message2);
             expect($logMock.warn).toHaveBeenCalledWith(message1 + ' ' + message2);
         });
 
         it('should make a post call to the remoteLoggingUrl endpoint', function () {
             $httpBackend.expectPOST(remoteLoggingUrl).respond(200);
-            log.warn();
+            rlog.warn();
             $httpBackend.flush();
         });
 
@@ -164,7 +164,7 @@ describe('The log service', function () {
                     message: message
                 };
             $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
-            log.warn(message);
+            rlog.warn(message);
             $httpBackend.flush();
         });
 
@@ -176,37 +176,37 @@ describe('The log service', function () {
                     message: message1 + ' ' + message2
                 };
             $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
-            log.warn(message1, message2);
+            rlog.warn(message1, message2);
             $httpBackend.flush();
         });
     });
 
     describe('should have a error() method and that', function () {
         it('should exist', function () {
-            expect(typeof log.error).toBe('function');
+            expect(typeof rlog.error).toBe('function');
         });
 
         it('should call $log.error()', function () {
-            log.error();
+            rlog.error();
             expect($logMock.error).toHaveBeenCalled();
         });
 
         it('should call $log.error() with the message that is given as a argument', function () {
             var message = 'some message';
-            log.error(message);
+            rlog.error(message);
             expect($logMock.error).toHaveBeenCalledWith(message);
         });
 
         it('should join multiple arguments to one string', function () {
             var message1 = 'some message',
                 message2 = 'some message 2';
-            log.error(message1, message2);
+            rlog.error(message1, message2);
             expect($logMock.error).toHaveBeenCalledWith(message1 + ' ' + message2);
         });
 
         it('should make a post call to the remoteLoggingUrl endpoint', function () {
             $httpBackend.expectPOST(remoteLoggingUrl).respond(200);
-            log.error();
+            rlog.error();
             $httpBackend.flush();
         });
 
@@ -217,7 +217,7 @@ describe('The log service', function () {
                     message: message
                 };
             $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
-            log.error(message);
+            rlog.error(message);
             $httpBackend.flush();
         });
 
@@ -229,37 +229,37 @@ describe('The log service', function () {
                     message: message1 + ' ' + message2
                 };
             $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
-            log.error(message1, message2);
+            rlog.error(message1, message2);
             $httpBackend.flush();
         });
     });
 
     describe('should have a debug() method and that', function () {
         it('should exist', function () {
-            expect(typeof log.debug).toBe('function');
+            expect(typeof rlog.debug).toBe('function');
         });
 
         it('should call $log.debug()', function () {
-            log.debug();
+            rlog.debug();
             expect($logMock.debug).toHaveBeenCalled();
         });
 
         it('should call $log.debug() with the message that is given as a argument', function () {
             var message = 'some message';
-            log.debug(message);
+            rlog.debug(message);
             expect($logMock.debug).toHaveBeenCalledWith(message);
         });
 
         it('should join multiple arguments to one string', function () {
             var message1 = 'some message',
                 message2 = 'some message 2';
-            log.debug(message1, message2);
+            rlog.debug(message1, message2);
             expect($logMock.debug).toHaveBeenCalledWith(message1 + ' ' + message2);
         });
 
         it('should make a post call to the remoteLoggingUrl endpoint', function () {
             $httpBackend.expectPOST(remoteLoggingUrl).respond(200);
-            log.debug();
+            rlog.debug();
             $httpBackend.flush();
         });
 
@@ -270,7 +270,7 @@ describe('The log service', function () {
                     message: message
                 };
             $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
-            log.debug(message);
+            rlog.debug(message);
             $httpBackend.flush();
         });
 
@@ -282,24 +282,24 @@ describe('The log service', function () {
                     message: message1 + ' ' + message2
                 };
             $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
-            log.debug(message1, message2);
+            rlog.debug(message1, message2);
             $httpBackend.flush();
         });
     });
 
     describe('should have a exception() method and that', function () {
         it('should exist', function () {
-            expect(typeof log.exception).toBe('function');
+            expect(typeof rlog.exception).toBe('function');
         });
 
         it('should call $log.error', function () {
-            log.exception();
+            rlog.exception();
             expect($logMock.error).toHaveBeenCalled();
         });
 
         it('should call $log.error() with the error/exception that is given as a argument', function () {
             var ex = new Error('some message');
-            log.exception(ex);
+            rlog.exception(ex);
             expect($logMock.error).toHaveBeenCalledWith(ex);
         });
 
@@ -314,7 +314,7 @@ describe('The log service', function () {
                     stacktrace: exception.stack
                 };
             $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
-            log.exception(exception, cause);
+            rlog.exception(exception, cause);
             $httpBackend.flush();
         });
     });

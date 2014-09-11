@@ -10,14 +10,14 @@ To start using this Angular.js module you need to add this to your index.html:
 
     <script src="/bower_components/remoteLogging/bin/remoteLoggingModule.min.js"></script>
 
-And to log you need to use the log service instead of the Angular.js $log service:
+And to log you need to use the rlog service instead of the Angular.js $log service:
   
     var module = angular.module('myApp', ['remoteLogging']);
     
     module.constant('remoteLoggingUrl', '/logging'); //This is a requirement for the remoteLogging module
     
-    module.controller('main', function ($scope, log) {
-        log.info('logging some stuff to the console and to the backend');
+    module.controller('main', function ($scope, rlog) {
+        rlog.info('logging some stuff to the console and to the backend');
     });
     
 When you have imported the remoteLogging module as stated above you only need to add the exceptionHandlerOverride
