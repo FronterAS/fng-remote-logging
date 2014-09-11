@@ -1,7 +1,7 @@
 'use strict';
 (function (angular) {
     angular.module('remoteLogging', [])
-        .service('rlog', function ($log, $http, remoteLoggingUrl) {
+        .service('rlog', function ($log, $http, REMOTE_LOGGING_URL) {
             this.log = function () {
                 var message = spaceJoin(arguments);
                 logging('log', message);
@@ -55,7 +55,7 @@
             }
 
             function post (data) {
-                $http.post(remoteLoggingUrl, data);
+                $http.post(REMOTE_LOGGING_URL, data);
             }
         });
 }(angular));

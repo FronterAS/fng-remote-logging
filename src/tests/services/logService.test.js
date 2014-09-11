@@ -4,7 +4,7 @@ describe('The log service', function () {
     var rlog,
         $logMock,
         $httpBackend,
-        remoteLoggingUrl;
+        REMOTE_LOGGING_URL;
 
     beforeEach(module('remoteLogging'));
 
@@ -12,14 +12,14 @@ describe('The log service', function () {
         module(function ($provide) {
             $logMock = jasmine.createSpyObj('$log', ['log','info','warn','error','debug']);
             $provide.value('$log', $logMock);
-            $provide.constant('remoteLoggingUrl', '/someUrlForLogging');
+            $provide.constant('REMOTE_LOGGING_URL', '/someUrlForLogging');
         });
     });
 
-    beforeEach(inject(function (_rlog_, _$httpBackend_, _remoteLoggingUrl_) {
+    beforeEach(inject(function (_rlog_, _$httpBackend_, _REMOTE_LOGGING_URL_) {
         rlog = _rlog_;
         $httpBackend = _$httpBackend_;
-        remoteLoggingUrl = _remoteLoggingUrl_;
+        REMOTE_LOGGING_URL = _REMOTE_LOGGING_URL_;
     }));
 
     describe('should have a log() method and that', function () {
@@ -45,8 +45,8 @@ describe('The log service', function () {
             expect($logMock.log).toHaveBeenCalledWith(message1 + ' ' + message2);
         });
 
-        it('should make a post call to the remoteLoggingUrl endpoint', function () {
-            $httpBackend.expectPOST(remoteLoggingUrl).respond(200);
+        it('should make a post call to the REMOTE_LOGGING_URL endpoint', function () {
+            $httpBackend.expectPOST(REMOTE_LOGGING_URL).respond(200);
             rlog.log();
             $httpBackend.flush();
         });
@@ -57,7 +57,7 @@ describe('The log service', function () {
                     type: 'log',
                     message: message
                 };
-            $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
+            $httpBackend.expectPOST(REMOTE_LOGGING_URL, postData).respond(200);
             rlog.log(message);
             $httpBackend.flush();
         });
@@ -69,7 +69,7 @@ describe('The log service', function () {
                     type: 'log',
                     message: message1 + ' ' + message2
                 };
-            $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
+            $httpBackend.expectPOST(REMOTE_LOGGING_URL, postData).respond(200);
             rlog.log(message1, message2);
             $httpBackend.flush();
         });
@@ -98,8 +98,8 @@ describe('The log service', function () {
             expect($logMock.info).toHaveBeenCalledWith(message1 + ' ' + message2);
         });
 
-        it('should make a post call to the remoteLoggingUrl endpoint', function () {
-            $httpBackend.expectPOST(remoteLoggingUrl).respond(200);
+        it('should make a post call to the REMOTE_LOGGING_URL endpoint', function () {
+            $httpBackend.expectPOST(REMOTE_LOGGING_URL).respond(200);
             rlog.info();
             $httpBackend.flush();
         });
@@ -110,7 +110,7 @@ describe('The log service', function () {
                     type: 'info',
                     message: message
                 };
-            $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
+            $httpBackend.expectPOST(REMOTE_LOGGING_URL, postData).respond(200);
             rlog.info(message);
             $httpBackend.flush();
         });
@@ -122,7 +122,7 @@ describe('The log service', function () {
                     type: 'info',
                     message: message1 + ' ' + message2
                 };
-            $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
+            $httpBackend.expectPOST(REMOTE_LOGGING_URL, postData).respond(200);
             rlog.info(message1, message2);
             $httpBackend.flush();
         });
@@ -151,8 +151,8 @@ describe('The log service', function () {
             expect($logMock.warn).toHaveBeenCalledWith(message1 + ' ' + message2);
         });
 
-        it('should make a post call to the remoteLoggingUrl endpoint', function () {
-            $httpBackend.expectPOST(remoteLoggingUrl).respond(200);
+        it('should make a post call to the REMOTE_LOGGING_URL endpoint', function () {
+            $httpBackend.expectPOST(REMOTE_LOGGING_URL).respond(200);
             rlog.warn();
             $httpBackend.flush();
         });
@@ -163,7 +163,7 @@ describe('The log service', function () {
                     type: 'warn',
                     message: message
                 };
-            $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
+            $httpBackend.expectPOST(REMOTE_LOGGING_URL, postData).respond(200);
             rlog.warn(message);
             $httpBackend.flush();
         });
@@ -175,7 +175,7 @@ describe('The log service', function () {
                     type: 'warn',
                     message: message1 + ' ' + message2
                 };
-            $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
+            $httpBackend.expectPOST(REMOTE_LOGGING_URL, postData).respond(200);
             rlog.warn(message1, message2);
             $httpBackend.flush();
         });
@@ -204,8 +204,8 @@ describe('The log service', function () {
             expect($logMock.error).toHaveBeenCalledWith(message1 + ' ' + message2);
         });
 
-        it('should make a post call to the remoteLoggingUrl endpoint', function () {
-            $httpBackend.expectPOST(remoteLoggingUrl).respond(200);
+        it('should make a post call to the REMOTE_LOGGING_URL endpoint', function () {
+            $httpBackend.expectPOST(REMOTE_LOGGING_URL).respond(200);
             rlog.error();
             $httpBackend.flush();
         });
@@ -216,7 +216,7 @@ describe('The log service', function () {
                     type: 'error',
                     message: message
                 };
-            $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
+            $httpBackend.expectPOST(REMOTE_LOGGING_URL, postData).respond(200);
             rlog.error(message);
             $httpBackend.flush();
         });
@@ -228,7 +228,7 @@ describe('The log service', function () {
                     type: 'error',
                     message: message1 + ' ' + message2
                 };
-            $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
+            $httpBackend.expectPOST(REMOTE_LOGGING_URL, postData).respond(200);
             rlog.error(message1, message2);
             $httpBackend.flush();
         });
@@ -257,8 +257,8 @@ describe('The log service', function () {
             expect($logMock.debug).toHaveBeenCalledWith(message1 + ' ' + message2);
         });
 
-        it('should make a post call to the remoteLoggingUrl endpoint', function () {
-            $httpBackend.expectPOST(remoteLoggingUrl).respond(200);
+        it('should make a post call to the REMOTE_LOGGING_URL endpoint', function () {
+            $httpBackend.expectPOST(REMOTE_LOGGING_URL).respond(200);
             rlog.debug();
             $httpBackend.flush();
         });
@@ -269,7 +269,7 @@ describe('The log service', function () {
                     type: 'debug',
                     message: message
                 };
-            $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
+            $httpBackend.expectPOST(REMOTE_LOGGING_URL, postData).respond(200);
             rlog.debug(message);
             $httpBackend.flush();
         });
@@ -281,7 +281,7 @@ describe('The log service', function () {
                     type: 'debug',
                     message: message1 + ' ' + message2
                 };
-            $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
+            $httpBackend.expectPOST(REMOTE_LOGGING_URL, postData).respond(200);
             rlog.debug(message1, message2);
             $httpBackend.flush();
         });
@@ -303,7 +303,7 @@ describe('The log service', function () {
             expect($logMock.error).toHaveBeenCalledWith(ex);
         });
 
-        it('should post the exception info and cause to the remoteLoggingUrl endpoint', function () {
+        it('should post the exception info and cause to the REMOTE_LOGGING_URL endpoint', function () {
             var exceptionMessage = 'I´m an exception',
                 exception = new Error(exceptionMessage),
                 cause = 'some cause',
@@ -313,7 +313,7 @@ describe('The log service', function () {
                     message: exceptionMessage,
                     stacktrace: exception.stack
                 };
-            $httpBackend.expectPOST(remoteLoggingUrl, postData).respond(200);
+            $httpBackend.expectPOST(REMOTE_LOGGING_URL, postData).respond(200);
             rlog.exception(exception, cause);
             $httpBackend.flush();
         });

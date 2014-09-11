@@ -18,7 +18,7 @@ And to log you need to use the rlog service instead of the Angular.js $log servi
 ```js
     var module = angular.module('myApp', ['remoteLogging']);
     
-    module.constant('remoteLoggingUrl', '/logging'); //This is a requirement for the remoteLogging module
+    module.constant('REMOTE_LOGGING_URL', '/logging'); //This is a requirement for the remoteLogging module
     
     module.controller('main', function ($scope, rlog) {
         rlog.info('logging some stuff to the console and to the backend');

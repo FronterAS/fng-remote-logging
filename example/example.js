@@ -1,6 +1,6 @@
 'use strict';
 angular.module('myApp', ['remoteLogging'])
-    .constant('remoteLoggingUrl', '/logging') // Local endpoint, see node log for output
+    .constant('REMOTE_LOGGING_URL', '/logging') // Local endpoint, see node log for output
     .controller('main', function ($scope, rlog) {
 
         $scope.showInfo = false;
