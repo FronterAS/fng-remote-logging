@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node example/server.js",
-    "postinstall": "node_modules/.bin/gulp build",
+    "postinstall": "node_modules/.bin/gulp bower",
     "test": "node_modules/.bin/gulp test",
     "lint": "node_modules/.bin/gulp lint",
     "watch": "node_modules/.bin/gulp watch"

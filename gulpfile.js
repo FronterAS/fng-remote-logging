@@ -57,6 +57,11 @@ gulp.task('karma-for-watch', function () {
         .on('error', swallowError);
 });
 
+gulp.task('bower', function () {
+    return plugins.bower()
+        .pipe(gulp.dest('./bower_components'));
+});
+
 function swallowError (error) {
     console.error(error.toString());
     /* jshint validthis: true */
