@@ -20,7 +20,7 @@ your bower.json file:
 You also need to add this to your index.html:
 
 ```html
-    <script src="/bower_components/fng-remote-logging/bin/remoteLoggingModule.min.js"></script>
+    <script src="/bower_components/fng-remote-logging/build/fng-remote-logging.min.js"></script>
 ```
 
 And do the actual logging you need to use the rlog service instead of the Angular.js $log service:
@@ -35,11 +35,11 @@ And do the actual logging you need to use the rlog service instead of the Angula
     });
 ```
 
-When you have imported the remote logging module as stated above you only need to add the exceptionHandlerOverride
+When you have imported the remote logging module as stated above you only need to add the exceptionHandler override
 to your index.html to automatically start logging exceptions:
 
 ```html
-    <script src="/bower_components/fng-remote-logging/bin/exceptionHandlerOverride.min.js"></script>
+    <script src="/bower_components/fng-remote-logging/build/fng-exception-handler-override.min.js"></script>
 ```
 
 ## Development:

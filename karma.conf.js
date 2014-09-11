@@ -17,7 +17,7 @@ module.exports = function (config) {
         files: [
             'bower_components/angular/angular.js',
             'bower_components/**/!(*\\.min).js',
-            'src/remoteLoggingModule.js',
+            'src/fng-remote-logging.js',
             'src/**/*.js'
         ],
 
