@@ -1,5 +1,5 @@
-'use strict';
 (function (angular) {
+    'use strict';
     angular.module('fng.remote.logging')
         .factory('$exceptionHandler', function ($injector) {
             return function (exception, cause) {

@@ -1,5 +1,5 @@
-'use strict';
 (function (angular) {
+    'use strict';
     angular.module('fng.remote.logging', [])
         .service('rlog', function ($log, $http, REMOTE_LOGGING_URL) {
             this.log = function () {
