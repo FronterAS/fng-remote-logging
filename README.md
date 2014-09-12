@@ -6,13 +6,24 @@ Fronter Angular.js module to easily enable logging to a back end service from th
 
 ## Usage:
 
-To start using this Angular.js module you need to add this to your index.html:
+To start using this Angular.js module you first need to add this project as a bower dependency in
+your bower.json file:
+
+```json
+    ...
+    "dependencies": {
+        "fng-remote-logging": "https://gitlab.fronter.net/frontend-modules/fng-remote-logging.git#0.0.2"
+    }
+    ...
+```
+
+You also need to add this to your index.html:
 
 ```html
     <script src="/bower_components/fng-remote-logging/bin/remoteLoggingModule.min.js"></script>
 ```
 
-And to log you need to use the rlog service instead of the Angular.js $log service:
+And do the actual logging you need to use the rlog service instead of the Angular.js $log service:
 
 ```js
     var module = angular.module('myApp', ['fng.remote.logging']);
