@@ -12,7 +12,7 @@ your bower.json file:
 ```json
     ...
     "dependencies": {
-        "fng-remote-logging": "https://gitlab.fronter.net/frontend-modules/fng-remote-logging.git#0.0.2"
+        "fng-remote-logging": "https://gitlab.fronter.net/frontend-modules/fng-remote-logging.git#0.0.1"
     }
     ...
 ```
@@ -55,7 +55,15 @@ Before anything you need to run `npm install` as with any node.js application!
 
 
 ### Versioning
-The versioning works like this:
+When releasing this module it is important to update all of the versions:
+
+1. Update the version in package.json
+2. Update the version in bower.json
+3. Tag the current commit in Git
+4. The multiple places in this README that mentions the versions
+
+
+#### The versioning works like this:
 
     <major>.<minor>.<patch>
 
@@ -64,15 +72,6 @@ Meaning:
 * major: You break the api
 * minor: You add to the api
 * patch: Everything else
-
-
-### Important notes:
-
-When releasing this module it is important to update all of the versions:
-
-1. Update the version in package.json
-2. Update the version in bower.json
-3. Tag the current commit in Git
 
 ### Todo:
 
