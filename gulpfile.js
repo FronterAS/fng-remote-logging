@@ -19,7 +19,7 @@ gulp.task('test', function () {
 
 gulp.task('lint', ['jshint', 'jscs']);
 
-gulp.task('build', function () {
+gulp.task('build', ['test', 'lint'], function () {
     return gulp.src('src/**/!(*\\.test).js')
         .pipe(plugins.ngAnnotate())
         .pipe(plugins.uglify())
