@@ -1,6 +1,6 @@
 {
     "name": "fng-remote-logging",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "main": "bin/fng-remote-logging.min.js",
 
     "moduleType": [
