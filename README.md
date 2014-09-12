@@ -40,6 +40,7 @@ Before anything you need to run `npm install` as with any node.js application!
 * To start the server for the example: `npm start`
 * To lint the code: `npm run lint`
 * To get constant feedback when developing: `npm run watch`
+* To generate new minified versions of the module: `npm run build`
 
 
 ### Versioning
