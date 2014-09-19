@@ -4,26 +4,31 @@
         .service('rlog', function ($log, $http, REMOTE_LOGGING_URL) {
             this.log = function () {
                 var message = spaceJoin(arguments);
+                $log.log.apply($log, arguments);
                 logging('log', message);
             };
 
             this.info = function () {
                 var message = spaceJoin(arguments);
+                $log.info.apply($log, arguments);
                 logging('info', message);
             };
 
             this.warn = function () {
                 var message = spaceJoin(arguments);
+                $log.warn.apply($log, arguments);
                 logging('warn', message);
             };
 
             this.error = function () {
                 var message = spaceJoin(arguments);
+                $log.error.apply($log, arguments);
                 logging('error', message);
             };
 
             this.debug = function () {
                 var message = spaceJoin(arguments);
+                $log.debug.apply($log, arguments);
                 logging('debug', message);
             };
 
@@ -43,7 +48,6 @@
             }
 
             function logging (type, message) {
-                $log[type](message);
                 post({
                     type: type,
                     message: message

@@ -42,7 +42,7 @@ describe('The log service', function () {
             var message1 = 'some message',
                 message2 = 'some message 2';
             rlog.log(message1, message2);
-            expect($logMock.log).toHaveBeenCalledWith(message1 + ' ' + message2);
+            expect($logMock.log).toHaveBeenCalledWith(message1, message2);
         });
 
         it('should make a post call to the REMOTE_LOGGING_URL endpoint', function () {
@@ -95,7 +95,7 @@ describe('The log service', function () {
             var message1 = 'some message',
                 message2 = 'some message 2';
             rlog.info(message1, message2);
-            expect($logMock.info).toHaveBeenCalledWith(message1 + ' ' + message2);
+            expect($logMock.info).toHaveBeenCalledWith(message1, message2);
         });
 
         it('should make a post call to the REMOTE_LOGGING_URL endpoint', function () {
@@ -148,7 +148,7 @@ describe('The log service', function () {
             var message1 = 'some message',
                 message2 = 'some message 2';
             rlog.warn(message1, message2);
-            expect($logMock.warn).toHaveBeenCalledWith(message1 + ' ' + message2);
+            expect($logMock.warn).toHaveBeenCalledWith(message1, message2);
         });
 
         it('should make a post call to the REMOTE_LOGGING_URL endpoint', function () {
@@ -201,7 +201,7 @@ describe('The log service', function () {
             var message1 = 'some message',
                 message2 = 'some message 2';
             rlog.error(message1, message2);
-            expect($logMock.error).toHaveBeenCalledWith(message1 + ' ' + message2);
+            expect($logMock.error).toHaveBeenCalledWith(message1, message2);
         });
 
         it('should make a post call to the REMOTE_LOGGING_URL endpoint', function () {
@@ -254,7 +254,7 @@ describe('The log service', function () {
             var message1 = 'some message',
                 message2 = 'some message 2';
             rlog.debug(message1, message2);
-            expect($logMock.debug).toHaveBeenCalledWith(message1 + ' ' + message2);
+            expect($logMock.debug).toHaveBeenCalledWith(message1, message2);
         });
 
         it('should make a post call to the REMOTE_LOGGING_URL endpoint', function () {
