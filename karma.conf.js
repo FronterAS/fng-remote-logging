@@ -16,9 +16,10 @@ module.exports = function (config) {
         // list of files / patterns to load in the browser
         files: [
             'bower_components/angular/angular.js',
-            'bower_components/**/!(*\\.min).js',
+            'bower_components/angular-mocks/angular-mocks.js',
             'src/fng-remote-logging.js',
-            'src/**/*.js'
+            'src/fng-exception-handler-override.js',
+            'src/tests/**/*.js',
         ],
 
         // list of files to exclude
