@@ -29,7 +29,7 @@
         "README.*"
     ],
     "dependencies": {
-        "angular": "1.2.21",
-        "angular-mocks": "1.2.21"
+        "angular": "1.3.5",
+        "angular-mocks": "1.3.5"
     }
 }
