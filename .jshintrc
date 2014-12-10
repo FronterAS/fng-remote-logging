@@ -32,6 +32,7 @@
         "beforeEach": false,
         "afterEach": false,
         "mod": true,
-        "jasmine": false
+        "jasmine": false,
+        "process": false
     }
 }

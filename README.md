@@ -49,6 +49,7 @@ Before anything you need to run `npm install` as with any node.js application!
 * To run tests: `npm test`
     * location of coverage report when/after running tests: `./coverage/PhantomJS 1.9.7 (Mac OS X)/index.html`
 * To start the server for the example: `npm start`
+    * To start it on a different port use: `PORT=<port> npm start`
 * To lint the code: `npm run lint`
 * To get constant feedback when developing: `npm run watch`
 * To generate new minified versions of the module: `npm run build`
